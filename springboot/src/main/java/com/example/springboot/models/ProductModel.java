@@ -9,6 +9,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+/**
+ * Clsse que representa a tabela no banco de dados
+ * */
 
 @Entity
 @Table(name="TB_PRODUCTS")
