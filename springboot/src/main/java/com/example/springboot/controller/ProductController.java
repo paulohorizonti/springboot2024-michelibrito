@@ -51,6 +51,7 @@ public class ProductController {
 		return ResponseEntity.status(HttpStatus.OK).body(productList);
 	}
 	
+	//Buscando o produto pelo ID
 	@GetMapping("/products/{id}")
 	public ResponseEntity<Object> getOneProduct(@PathVariable(value="id")UUID id) {
 		Optional<ProductModel> product0 = productRepository.findById(id);
@@ -62,6 +63,7 @@ public class ProductController {
 		
 	}
 	
+	//Alterando o produto pelo ID
 	@PutMapping("/products/{id}")
 	public ResponseEntity<Object> updateProduct(@PathVariable(value="id")UUID id, @RequestBody @Valid ProductRecordDto productRecordDto){
 		Optional<ProductModel> product0 = productRepository.findById(id);
@@ -75,6 +77,8 @@ public class ProductController {
 		return ResponseEntity.status(HttpStatus.OK).body(productRepository.save(productModel));
 	}
 	
+	
+	//Apagando o produto pelo ID
 	@DeleteMapping("/products/{id}")
 	public ResponseEntity<Object> deleteProduct(@PathVariable(value="id")UUID id){
 		Optional<ProductModel> product0 = productRepository.findById(id);
